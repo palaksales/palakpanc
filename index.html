@@ -9,19 +9,19 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background-color: #f9f9f9;
+      background-color: #fdfaf6; /* soft beige */
       color: #333;
     }
     header {
-      background: #fff;
-      border-bottom: 2px solid #ddd;
+      background: #fffaf0; /* cream */
+      border-bottom: 2px solid #e0d6c8;
       text-align: center;
       padding: 20px;
     }
     header h1 {
       font-family: 'Playfair Display', serif;
       margin: 0;
-      color: #b30000;
+      color: #a0522d; /* warm brown */
     }
     nav a {
       margin: 0 10px;
@@ -32,9 +32,9 @@
     .hero {
       text-align: center;
       padding: 40px;
-      background: #f0f0f0;
+      background: #f5f0e8; /* light neutral */
     }
-    .hero h2 { color: #b30000; }
+    .hero h2 { color: #a0522d; }
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -42,7 +42,8 @@
       padding: 20px;
     }
     .item {
-      background: #fff;
+      background: #ffffff;
+      border: 1px solid #e0d6c8;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       padding: 15px;
@@ -52,10 +53,10 @@
     .item:hover { transform: translateY(-5px); }
     .item img { width: 100%; border-radius: 8px; }
     .favorite-btn {
-      background: none; border: none; font-size: 1.5em; cursor: pointer; color: #b30000;
+      background: none; border: none; font-size: 1.5em; cursor: pointer; color: #c0392b;
     }
     section { padding: 40px; }
-    h2 { font-family: 'Playfair Display', serif; color: #b30000; }
+    h2 { font-family: 'Playfair Display', serif; color: #a0522d; }
     .category-grid {
       display: flex; gap: 20px; flex-wrap: wrap;
     }
@@ -70,12 +71,12 @@
     }
     .cat:hover { transform: scale(1.05); }
     footer {
-      background: #fff;
+      background: #fffaf0;
       text-align: center;
       padding: 20px;
-      border-top: 2px solid #ddd;
+      border-top: 2px solid #e0d6c8;
     }
-    footer a { color: #b30000; text-decoration: none; }
+    footer a { color: #a0522d; text-decoration: none; }
     body.dark-mode { background-color: #222; color: #eee; }
     body.dark-mode header, body.dark-mode footer { background: #000; color: #eee; }
   </style>
@@ -99,13 +100,13 @@
 
   <main class="grid">
     <div class="item">
-      <img src="placeholder1.jpg" alt="Decor Inspiration">
+      <img src="images/vase.jpg" alt="Nordic Ceramic Vase">
       <h4>Nordic Ceramic Vase</h4>
       <p>Creative Co-Op</p>
       <a href="YOUR_AFFILIATE_LINK" target="_blank">Shop the Look</a>
       <button class="favorite-btn" data-item="Nordic Ceramic Vase">❤️</button>
     </div>
-    <!-- Add more items -->
+    <!-- Add more items with real images -->
   </main>
 
   <section id="categories">
