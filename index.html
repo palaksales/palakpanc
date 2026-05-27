@@ -11,6 +11,7 @@
       font-family: 'Poppins', sans-serif;
       background-color: #fdfaf6; /* soft beige */
       color: #333;
+      scroll-behavior: smooth;
     }
     header {
       background: #fffaf0; /* cream */
@@ -68,6 +69,7 @@
       text-align: center;
       border-radius: 8px;
       transition: transform 0.3s;
+      cursor: pointer;
     }
     .cat:hover { transform: scale(1.05); }
     footer {
@@ -98,28 +100,66 @@
     <p>Handpicked home decor inspirations from Pinterest. Click any item to shop the exact look on Amazon.</p>
   </section>
 
+  <!-- Product Grid -->
   <main class="grid">
-    <div class="item">
+    <div class="item" data-category="accents">
       <img src="images/vase.jpg" alt="Nordic Ceramic Vase">
       <h4>Nordic Ceramic Vase</h4>
       <p>Creative Co-Op</p>
       <a href="YOUR_AFFILIATE_LINK" target="_blank">Shop the Look</a>
       <button class="favorite-btn" data-item="Nordic Ceramic Vase">❤️</button>
     </div>
-    <!-- Add more items with real images -->
+    <div class="item" data-category="mirrors">
+      <img src="images/mirror.jpg" alt="Minimalist Round Mirror">
+      <h4>Minimalist Round Mirror</h4>
+      <p>Safavieh</p>
+      <a href="YOUR_AFFILIATE_LINK" target="_blank">Shop the Look</a>
+      <button class="favorite-btn" data-item="Minimalist Round Mirror">❤️</button>
+    </div>
+    <div class="item" data-category="textiles">
+      <img src="images/pillow.jpg" alt="Neutral Throw Pillow">
+      <h4>Neutral Throw Pillow</h4>
+      <p>Rivet</p>
+      <a href="YOUR_AFFILIATE_LINK" target="_blank">Shop the Look</a>
+      <button class="favorite-btn" data-item="Neutral Throw Pillow">❤️</button>
+    </div>
+    <div class="item" data-category="lighting">
+      <img src="images/lamp.jpg" alt="Pleated Table Lamp">
+      <h4>Pleated Table Lamp</h4>
+      <p>Umbra</p>
+      <a href="YOUR_AFFILIATE_LINK" target="_blank">Shop the Look</a>
+      <button class="favorite-btn" data-item="Pleated Table Lamp">❤️</button>
+    </div>
+    <div class="item" data-category="furniture">
+      <img src="images/chair.jpg" alt="Bouclé Accent Chair">
+      <h4>Bouclé Accent Chair</h4>
+      <p>Safavieh</p>
+      <a href="YOUR_AFFILIATE_LINK" target="_blank">Shop the Look</a>
+      <button class="favorite-btn" data-item="Bouclé Accent Chair">❤️</button>
+    </div>
+    <div class="item" data-category="wallart">
+      <img src="images/canvas.jpg" alt="Abstract Canvas Art">
+      <h4>Abstract Canvas Art</h4>
+      <p>Amazon Basics</p>
+      <a href="YOUR_AFFILIATE_LINK" target="_blank">Shop the Look</a>
+      <button class="favorite-btn" data-item="Abstract Canvas Art">❤️</button>
+    </div>
   </main>
 
+  <!-- Categories -->
   <section id="categories">
     <h2>Shop by Category</h2>
     <div class="category-grid">
-      <div class="cat">🪞 Mirrors</div>
-      <div class="cat">🛋️ Furniture</div>
-      <div class="cat">🕯️ Accents</div>
-      <div class="cat">💡 Lighting</div>
-      <div class="cat">🧺 Textiles</div>
+      <div class="cat" data-filter="mirrors">🪞 Mirrors</div>
+      <div class="cat" data-filter="furniture">🛋️ Furniture</div>
+      <div class="cat" data-filter="accents">🕯️ Accents</div>
+      <div class="cat" data-filter="lighting">💡 Lighting</div>
+      <div class="cat" data-filter="textiles">🧺 Textiles</div>
+      <div class="cat" data-filter="wallart">🖼️ Wall Art</div>
     </div>
   </section>
 
+  <!-- About -->
   <section id="about">
     <h2>Behind The Curation</h2>
     <p>Welcome to Palaksales. I started this space because I believe creating a beautiful, calming home shouldn't feel overwhelming or cost a fortune.</p>
@@ -130,56 +170,14 @@
     </ul>
   </section>
 
+  <!-- Blog -->
   <section id="blog">
     <h2>Guides & Inspiration</h2>
     <article>
       <h3>The Stylish Coffee Table</h3>
       <p>Learn the “Rule of Threes” for styling your table...</p>
+      <a href="blog-coffee-table.html">Read More</a>
     </article>
     <article>
       <h3>Easy Spring Styling</h3>
       <p>Fresh ideas to brighten your living room...</p>
-    </article>
-  </section>
-
-  <section id="contact">
-    <h2>Let's Connect</h2>
-    <p>Email: <strong>palakpanchal534@gmail.com</strong> | Phone: 📞 9050949406</p>
-    <form>
-      <label>Name:</label><input type="text" name="name" required>
-      <label>Email:</label><input type="email" name="email" required>
-      <label>Subject:</label><input type="text" name="subject">
-      <label>Message:</label><textarea name="message"></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>Follow us: <a href="#">Pinterest</a> | <a href="#">Instagram</a> | <a href="#">TikTok</a></p>
-    <p>As an Amazon Associate, I earn from qualifying purchases.</p>
-    <p>© 2026 Palaksales. All rights reserved.</p>
-  </footer>
-
-  <script>
-    // Dark mode toggle
-    document.getElementById("mode-toggle").addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
-    });
-
-    // Wishlist favorites
-    document.addEventListener("DOMContentLoaded", () => {
-      const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-      document.querySelectorAll(".favorite-btn").forEach(btn => {
-        btn.addEventListener("click", () => {
-          const itemName = btn.dataset.item;
-          if (!favorites.includes(itemName)) {
-            favorites.push(itemName);
-            localStorage.setItem("favorites", JSON.stringify(favorites));
-            alert(itemName + " added to your Moodboard!");
-          }
-        });
-      });
-    });
-  </script>
-</body>
-</html>
