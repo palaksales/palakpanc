@@ -3,39 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Palaksales - Curated Decor</title>
+  <title>Palaksales - The Curated Room</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <style>
-    /* Base styling */
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #1a1a1a;
-      color: #f5f5f5;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
     }
     header {
-      background-color: #000;
-      padding: 20px;
+      background: #fff;
+      border-bottom: 2px solid #ddd;
       text-align: center;
-      border-bottom: 2px solid #b30000;
+      padding: 20px;
     }
     header h1 {
+      font-family: 'Playfair Display', serif;
       margin: 0;
-      font-size: 2.5em;
       color: #b30000;
     }
     nav a {
       margin: 0 10px;
-      color: #f5f5f5;
       text-decoration: none;
+      color: #333;
+      font-weight: 600;
     }
-    section.hero {
-      padding: 40px;
+    .hero {
       text-align: center;
+      padding: 40px;
+      background: #f0f0f0;
     }
-    section.hero h2 {
-      color: #b30000;
-    }
-    /* Grid layout */
+    .hero h2 { color: #b30000; }
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -43,66 +42,61 @@
       padding: 20px;
     }
     .item {
-      background: #262626;
+      background: #fff;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s;
-      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       padding: 15px;
+      text-align: center;
+      transition: transform 0.3s;
     }
-    .item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-    }
-    .item img {
-      width: 100%;
-      display: block;
-      border-radius: 8px;
-    }
+    .item:hover { transform: translateY(-5px); }
+    .item img { width: 100%; border-radius: 8px; }
     .favorite-btn {
-      background: none;
-      border: none;
-      font-size: 1.5em;
-      cursor: pointer;
-      color: #b30000;
+      background: none; border: none; font-size: 1.5em; cursor: pointer; color: #b30000;
     }
+    section { padding: 40px; }
+    h2 { font-family: 'Playfair Display', serif; color: #b30000; }
+    .category-grid {
+      display: flex; gap: 20px; flex-wrap: wrap;
+    }
+    .cat {
+      flex: 1 1 150px;
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+    .cat:hover { transform: scale(1.05); }
     footer {
-      background-color: #000;
+      background: #fff;
       text-align: center;
       padding: 20px;
-      border-top: 2px solid #b30000;
+      border-top: 2px solid #ddd;
     }
-    footer a {
-      color: #b30000;
-      text-decoration: none;
-    }
-    /* Dark mode toggle */
-    body.dark-mode {
-      background-color: #222;
-      color: #eee;
-    }
+    footer a { color: #b30000; text-decoration: none; }
+    body.dark-mode { background-color: #222; color: #eee; }
+    body.dark-mode header, body.dark-mode footer { background: #000; color: #eee; }
   </style>
 </head>
 <body>
-  <!-- Header -->
   <header>
     <h1>Palaksales</h1>
     <nav>
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
+      <a href="#blog">Blog</a>
     </nav>
     <button id="mode-toggle">Toggle Dark/Light</button>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero" id="home">
     <h2>Minimalist spaces, curated for you.</h2>
     <p>Handpicked home decor inspirations from Pinterest. Click any item to shop the exact look on Amazon.</p>
   </section>
 
-  <!-- Pinterest-Style Grid -->
   <main class="grid">
     <div class="item">
       <img src="placeholder1.jpg" alt="Decor Inspiration">
@@ -111,10 +105,20 @@
       <a href="YOUR_AFFILIATE_LINK" target="_blank">Shop the Look</a>
       <button class="favorite-btn" data-item="Nordic Ceramic Vase">❤️</button>
     </div>
-    <!-- Add more items here -->
+    <!-- Add more items -->
   </main>
 
-  <!-- About Section -->
+  <section id="categories">
+    <h2>Shop by Category</h2>
+    <div class="category-grid">
+      <div class="cat">🪞 Mirrors</div>
+      <div class="cat">🛋️ Furniture</div>
+      <div class="cat">🕯️ Accents</div>
+      <div class="cat">💡 Lighting</div>
+      <div class="cat">🧺 Textiles</div>
+    </div>
+  </section>
+
   <section id="about">
     <h2>Behind The Curation</h2>
     <p>Welcome to Palaksales. I started this space because I believe creating a beautiful, calming home shouldn't feel overwhelming or cost a fortune.</p>
@@ -125,10 +129,21 @@
     </ul>
   </section>
 
-  <!-- Contact Section -->
+  <section id="blog">
+    <h2>Guides & Inspiration</h2>
+    <article>
+      <h3>The Stylish Coffee Table</h3>
+      <p>Learn the “Rule of Threes” for styling your table...</p>
+    </article>
+    <article>
+      <h3>Easy Spring Styling</h3>
+      <p>Fresh ideas to brighten your living room...</p>
+    </article>
+  </section>
+
   <section id="contact">
     <h2>Let's Connect</h2>
-    <p>Have a question about a specific decor piece, or want to collaborate? Email directly at <strong>palakpanchal534@gmail.com</strong> or call 📞 9050949406.</p>
+    <p>Email: <strong>palakpanchal534@gmail.com</strong> | Phone: 📞 9050949406</p>
     <form>
       <label>Name:</label><input type="text" name="name" required>
       <label>Email:</label><input type="email" name="email" required>
@@ -138,15 +153,12 @@
     </form>
   </section>
 
-  <!-- Footer -->
   <footer>
-    <p>📞 9050949406 | 📧 palakpanchal534@gmail.com</p>
     <p>Follow us: <a href="#">Pinterest</a> | <a href="#">Instagram</a> | <a href="#">TikTok</a></p>
     <p>As an Amazon Associate, I earn from qualifying purchases.</p>
     <p>© 2026 Palaksales. All rights reserved.</p>
   </footer>
 
-  <!-- Scripts -->
   <script>
     // Dark mode toggle
     document.getElementById("mode-toggle").addEventListener("click", () => {
