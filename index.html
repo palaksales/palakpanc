@@ -1,183 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Palaksales - The Curated Room</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #fdfaf6; /* soft beige */
-      color: #333;
-      scroll-behavior: smooth;
-    }
-    header {
-      background: #fffaf0; /* cream */
-      border-bottom: 2px solid #e0d6c8;
-      text-align: center;
-      padding: 20px;
-    }
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      margin: 0;
-      color: #a0522d; /* warm brown */
-    }
-    nav a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #333;
-      font-weight: 600;
-    }
-    .hero {
-      text-align: center;
-      padding: 40px;
-      background: #f5f0e8; /* light neutral */
-    }
-    .hero h2 { color: #a0522d; }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 20px;
-    }
-    .item {
-      background: #ffffff;
-      border: 1px solid #e0d6c8;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      padding: 15px;
-      text-align: center;
-      transition: transform 0.3s;
-    }
-    .item:hover { transform: translateY(-5px); }
-    .item img { width: 100%; border-radius: 8px; }
-    .favorite-btn {
-      background: none; border: none; font-size: 1.5em; cursor: pointer; color: #c0392b;
-    }
-    section { padding: 40px; }
-    h2 { font-family: 'Playfair Display', serif; color: #a0522d; }
-    .category-grid {
-      display: flex; gap: 20px; flex-wrap: wrap;
-    }
-    .cat {
-      flex: 1 1 150px;
-      background: #fff;
-      border: 1px solid #ddd;
-      padding: 20px;
-      text-align: center;
-      border-radius: 8px;
-      transition: transform 0.3s;
-      cursor: pointer;
-    }
-    .cat:hover { transform: scale(1.05); }
-    footer {
-      background: #fffaf0;
-      text-align: center;
-      padding: 20px;
-      border-top: 2px solid #e0d6c8;
-    }
-    footer a { color: #a0522d; text-decoration: none; }
-    body.dark-mode { background-color: #222; color: #eee; }
-    body.dark-mode header, body.dark-mode footer { background: #000; color: #eee; }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Palaksales</h1>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-      <a href="#blog">Blog</a>
-    </nav>
-    <button id="mode-toggle">Toggle Dark/Light</button>
-  </header>
+<!-- Contact Section -->
+<section id="contact">
+  <h2>Let's Connect</h2>
+  <p>Email: <strong>palakbusiness@gmail.com</strong> | Phone: 📞 9050949406</p>
+  <form>
+    <label>Name:</label><input type="text" name="name" required>
+    <label>Email:</label><input type="email" name="email" required>
+    <label>Subject:</label><input type="text" name="subject">
+    <label>Message:</label><textarea name="message"></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
 
-  <section class="hero" id="home">
-    <h2>Minimalist spaces, curated for you.</h2>
-    <p>Handpicked home decor inspirations from Pinterest. Click any item to shop the exact look on Amazon.</p>
-  </section>
-
-  <!-- Product Grid -->
-  <main class="grid">
-    <div class="item" data-category="accents">
-      <img src="images/vase.jpg" alt="Nordic Ceramic Vase">
-      <h4>Nordic Ceramic Vase</h4>
-      <p>Creative Co-Op</p>
-      <a href="YOUR_AFFILIATE_LINK" target="_blank">Shop the Look</a>
-      <button class="favorite-btn" data-item="Nordic Ceramic Vase">❤️</button>
-    </div>
-    <div class="item" data-category="mirrors">
-      <img src="images/mirror.jpg" alt="Minimalist Round Mirror">
-      <h4>Minimalist Round Mirror</h4>
-      <p>Safavieh</p>
-      <a href="YOUR_AFFILIATE_LINK" target="_blank">Shop the Look</a>
-      <button class="favorite-btn" data-item="Minimalist Round Mirror">❤️</button>
-    </div>
-    <div class="item" data-category="textiles">
-      <img src="images/pillow.jpg" alt="Neutral Throw Pillow">
-      <h4>Neutral Throw Pillow</h4>
-      <p>Rivet</p>
-      <a href="YOUR_AFFILIATE_LINK" target="_blank">Shop the Look</a>
-      <button class="favorite-btn" data-item="Neutral Throw Pillow">❤️</button>
-    </div>
-    <div class="item" data-category="lighting">
-      <img src="images/lamp.jpg" alt="Pleated Table Lamp">
-      <h4>Pleated Table Lamp</h4>
-      <p>Umbra</p>
-      <a href="YOUR_AFFILIATE_LINK" target="_blank">Shop the Look</a>
-      <button class="favorite-btn" data-item="Pleated Table Lamp">❤️</button>
-    </div>
-    <div class="item" data-category="furniture">
-      <img src="images/chair.jpg" alt="Bouclé Accent Chair">
-      <h4>Bouclé Accent Chair</h4>
-      <p>Safavieh</p>
-      <a href="YOUR_AFFILIATE_LINK" target="_blank">Shop the Look</a>
-      <button class="favorite-btn" data-item="Bouclé Accent Chair">❤️</button>
-    </div>
-    <div class="item" data-category="wallart">
-      <img src="images/canvas.jpg" alt="Abstract Canvas Art">
-      <h4>Abstract Canvas Art</h4>
-      <p>Amazon Basics</p>
-      <a href="YOUR_AFFILIATE_LINK" target="_blank">Shop the Look</a>
-      <button class="favorite-btn" data-item="Abstract Canvas Art">❤️</button>
-    </div>
-  </main>
-
-  <!-- Categories -->
-  <section id="categories">
-    <h2>Shop by Category</h2>
-    <div class="category-grid">
-      <div class="cat" data-filter="mirrors">🪞 Mirrors</div>
-      <div class="cat" data-filter="furniture">🛋️ Furniture</div>
-      <div class="cat" data-filter="accents">🕯️ Accents</div>
-      <div class="cat" data-filter="lighting">💡 Lighting</div>
-      <div class="cat" data-filter="textiles">🧺 Textiles</div>
-      <div class="cat" data-filter="wallart">🖼️ Wall Art</div>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about">
-    <h2>Behind The Curation</h2>
-    <p>Welcome to Palaksales. I started this space because I believe creating a beautiful, calming home shouldn't feel overwhelming or cost a fortune.</p>
-    <p>Every piece featured here is hand-selected to match a clean, timeless, and functional aesthetic. I spend hours combing through design trends and tracking down the best, highly-rated budget alternatives on Amazon so you don’t have to.</p>
-    <ul>
-      <li>Warm Minimalism: Neutral tones and cozy textures</li>
-      <li>Function Meets Beauty: Items that look stunning but serve a purpose</li>
-    </ul>
-  </section>
-
-  <!-- Blog -->
-  <section id="blog">
-    <h2>Guides & Inspiration</h2>
-    <article>
-      <h3>The Stylish Coffee Table</h3>
-      <p>Learn the “Rule of Threes” for styling your table...</p>
-      <a href="blog-coffee-table.html">Read More</a>
-    </article>
-    <article>
-      <h3>Easy Spring Styling</h3>
-      <p>Fresh ideas to brighten your living room...</p>
+<!-- Footer -->
+<footer>
+  <p>Follow us: <a href="https://www.pinterest.com/palaksales">Pinterest</a> | 
+     <a href="https://www.instagram.com/palaksales">Instagram</a> | 
+     <a href="https://www.tiktok.com/@palaksales">TikTok</a></p>
+  <p>📧 palakbusiness@gmail.com</p>
+  <p>As an Amazon Associate, I earn from qualifying purchases.</p>
+  <p>© 2026 Palaksales. All rights reserved.</p>
+</footer>
