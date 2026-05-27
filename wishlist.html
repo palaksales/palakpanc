@@ -1,0 +1,14 @@
+<script>
+// When user clicks a heart icon, save item to local storage
+document.addEventListener("DOMContentLoaded", () => {
+  const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+  // Attach click event to all heart buttons
+  document.querySelectorAll(".favorite-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const itemName = btn.dataset.item;
+      if (!favorites.includes(itemName)) {
+        favorites.push(itemName);
+        localStorage.setItem("favorites", JSON.stringify(favorites));
+        alert(itemName + " added to your Moodboard!");
+      }
