@@ -1,0 +1,303 @@
+<think>
+The user is asking me to rebuild their home décor curation website called "Palaksales" (or "The Curated Room"). They have provided a massive amount of detailed information about what they want, but their previous code was deleted.
+
+Looking at the requirements:
+1.  **Single index.html file**: They want a single file containing HTML, CSS, and JS for easier management (like the previous version they had).
+2.  **Design**: "Curated Room" mockup style, beige/neutral palette, cozy textures, warm accents, generous whitespace.
+3.  **Fonts**: Google Fonts (Poppins and Playfair Display).
+4.  **Structure**:
+    *   Header with Logo "THE CURATED ROOM" and Navigation (Home, About, Contact).
+    *   Hero Section ("Minimalist spaces, curated for you...").
+    *   Filters (by Room: Living Room, Bedroom, Kitchen; by Style: Japandi, Minimalist, Boho).
+    *   Product Grid (Pinterest style) with 6 sample items.
+    *   About Section ("Behind The Curation").
+    *   Contact Section ("Let's Connect").
+    *   Footer (Affiliate disclaimer, social links).
+5.  **Features**:
+    *   Wishlist heart button (using localStorage).
+    *   Dark/Light mode toggle.
+    *   Category filters with JavaScript.
+    *   Style Quiz.
+    *   Infinite scroll (simple version).
+    *   Pinterest feed integration (placeholder/mock).
+6.  **Content Details**:
+    *   6 Products: Vase, Mirror, Pillow, Lamp, Chair, Canvas.
+    *   Images stored in `/images` folder.
+    *   Affiliate links to Amazon (placeholders like `YOUR_AFFILIATE_LINK`).
+    *   Business email: `palakbusiness@gmail.com`.
+7.  **CSS/UI**:
+    *   Hover effects on cards.
+    *   Smooth scrolling.
+    *   Responsive layout.
+    *   Clean typography.
+
+The user's message contains a previous attempt at generating code which was cut off at "<!-- The Wishlist Button -->". I need to provide a complete, working solution this time.
+
+**Plan:**
+1.  **HTML Structure**: Single page layout with `id` sections for Home, About, Contact.
+2.  **CSS**: Embedded in `<style>`. Use CSS variables for the theme (beige/light and dark mode). Use Flexbox and Grid.
+3.  **JS**: Embedded in `<script>`. Handle:
+    *   Dark mode toggle (save preference to localStorage).
+    *   Wishlist functionality (save to localStorage, update UI).
+    *   Filtering (show/hide products based on selected filter).
+    *   Style Quiz (simple modal or section with buttons).
+    *   Smooth scrolling for nav links.
+
+**Specific Details to Implement:**
+*   **Logo**: THE CURATED ROOM.
+*   **Colors**: `#f9f7f2` (Cream/Beige), `#333` (Dark Text), `#8c7b6e` (Warm Accent).
+*   **Fonts**: Poppins (Body), Playfair Display (Headings).
+*   **Products**:
+    1.  Nordic Ceramic Vase (Accents)
+    2.  Minimalist Mirror (Wall Decor)
+    3.  Textured Throw Pillow (Textiles)
+    4.  Arched Floor Lamp (Lighting)
+    5.  Bouclé Accent Chair (Furniture)
+    6.  Abstract Canvas Art (Wall Decor)
+*   **Footer**: Mandatory Amazon Associate disclaimer. Privacy policy links. Copyright 2026.
+
+**Let's write the code.**
+
+*Self-Correction during thought process:*
+The previous snippet ended abruptly. I must ensure the code is complete and not cut off. I will include comments indicating where they need to replace `YOUR_AFFILIATE_LINK` and image paths. I'll use placeholder images from Unsplash (via source.unsplash.com or similar reliable placeholder service) so they can see the layout immediately, but instruct them to replace with local files in `/images`.
+
+Wait, I shouldn't use external placeholder services if possible to keep it self-contained, but without local images, the grid looks empty. I will use reliable Unsplash Source URLs for the demo, but comment clearly to swap them for local files.
+
+Actually, looking at the prompt again: "stored in an `/images` folder". I will assume they have the files or will add them. I will generate the HTML img tags pointing to `/images/vase.jpg`, etc.
+
+Let's assemble the `index.html`.
+
+**Code Structure:**
+- `<!DOCTYPE html>`
+- `<html>`
+- `<head>`: Meta, Title, Google Fonts link, `<style>` block.
+- `<body>`:
+  - `<header>`: Nav, Logo, Theme Toggle.
+  - `<section id="hero">`: Hero content.
+  - `<section id="filters">`: Filter buttons.
+  - `<section id="shop">`: Product Grid.
+  - `<section id="about">`: About content.
+  - `<section id="quiz">`: Style Quiz.
+  - `<section id="contact">`: Contact form.
+  - `<footer>`: Disclaimers, Socials.
+  - `<script>`: Logic.
+
+**Filtering Logic:**
+Products will have `data-category` and `data-room` attributes.
+JS will filter the grid based on click events.
+
+**Wishlist Logic:**
+Click heart -> Save ID to array in localStorage -> Update heart icon color.
+
+**Dark Mode:**
+Toggle class on `body` -> Save to localStorage.
+
+Let's build it.
+</think>’m sorry to hear the data was lost, but I’m here to help you rebuild it! Based on your detailed recap, I have reconstructed the complete website in a single **index.html** file.
+
+This code includes:
+1.  **Design**: A clean "Curated Room" aesthetic with beige tones and elegant fonts.
+2.  **Interactive Features**: Dark/Light mode toggle, Category filters, a working Wishlist (saved to localStorage), and the Style Quiz.
+3.  **Content**: The full product grid (6 items), About section, and Contact form.
+4.  **Logic**: All JavaScript is embedded so you can just copy and paste.
+
+### Instructions to Publish
+1.  **Create File**: Save the code below as `index.html`.
+2.  **Images**: Place your product images (`vase.jpg`, `mirror.jpg`, etc.) inside a folder named `images` in your GitHub repo.
+3.  **Links**: Find and replace `YOUR_AFFILIATE_LINK` with your real Amazon links.
+
+Here is your restored code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palaksales | The Curated Room</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- CSS VARIABLES & THEME --- */
+        :root {
+            --bg-color: #f9f7f2; /* Beige/Cream */
+            --text-main: #333333;
+            --text-muted: #666666;
+            --accent: #8c7b6e; /* Warm Taupe */
+            --card-bg: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.08);
+            --font-head: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+            --btn-text: #ffffff;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #1a1a1a;
+            --text-main: #f0f0f0;
+            --text-muted: #aaaaaa;
+            --accent: #dcdcdc;
+            --card-bg: #2d2d2d;
+            --shadow: 0 4px 15px rgba(0,0,0,0.4);
+            --btn-text: #1a1a1a;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            transition: background-color 0.3s, color 0.3s;
+            line-height: 1.6;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; display: block; }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .section-title { font-family: var(--font-head); font-size: 2.5rem; margin-bottom: 1rem; text-align: center; }
+        .btn {
+            display: inline-block; padding: 12px 24px; background: var(--text-main); color: var(--btn-text);
+            border: none; cursor: pointer; transition: 0.3s; font-family: var(--font-body); font-weight: 500;
+        }
+        .btn:hover { opacity: 0.9; transform: translateY(-2px); }
+
+        /* --- HEADER --- */
+        header {
+            position: sticky; top: 0; z-index: 1000;
+            background: var(--bg-color); border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding: 20px 0;
+        }
+        nav { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: var(--font-head); font-size: 1.5rem; font-weight: 600; letter-spacing: 1px; }
+        
+        .nav-links { display: flex; gap: 30px; align-items: center; }
+        .nav-links a { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
+        .theme-toggle { background: none; border: 1px solid var(--text-main); color: var(--text-main); padding: 5px 10px; cursor: pointer; border-radius: 20px; font-size: 0.9rem; }
+
+        /* --- HERO --- */
+        .hero {
+            text-align: center; padding: 100px 20px;
+            background: linear-gradient(rgba(249,247,242,0.9), rgba(249,247,242,0.9)), url('https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+        }
+        [data-theme="dark"] .hero { background: linear-gradient(rgba(26,26,26,0.85), rgba(26,26,26,0.85)), url('https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1200&q=80'); background-size: cover; }
+        
+        .hero h1 { font-family: var(--font-head); font-size: 3.5rem; line-height: 1.2; margin-bottom: 20px; }
+        .hero p { font-size: 1.1rem; max-width: 600px; margin: 0 auto 30px; color: var(--text-muted); }
+
+        /* --- FILTERS --- */
+        .filters { padding: 40px 0 20px; text-align: center; }
+        .filter-group { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+        .filter-label { margin-right: 10px; font-weight: 600; font-size: 0.9rem; }
+        .filter-btn {
+            padding: 8px 16px; border: 1px solid var(--accent); background: transparent;
+            color: var(--text-main); border-radius: 20px; cursor: pointer; font-size: 0.85rem;
+        }
+        .filter-btn.active, .filter-btn:hover { background: var(--accent); color: var(--bg-color); }
+
+        /* --- PRODUCT GRID --- */
+        .product-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; padding: 40px 0;
+        }
+        .product-card {
+            background: var(--card-bg); border-radius: 8px; overflow: hidden;
+            box-shadow: var(--shadow); transition: transform 0.3s ease; position: relative;
+        }
+        .product-card:hover { transform: translateY(-5px); }
+        
+        .card-img { width: 100%; height: 300px; object-fit: cover; background: #eee; }
+        
+        .card-details { padding: 20px; }
+        .card-brand { font-size: 0.8rem; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
+        .card-title { font-family: var(--font-head); font-size: 1.4rem; margin-bottom: 5px; }
+        .card-price { font-weight: 500; margin-bottom: 15px; display: block; color: var(--text-muted); }
+        
+        .wishlist-btn {
+            position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.9); border: none;
+            width: 35px; height: 35px; border-radius: 50%; cursor: pointer; font-size: 1.2rem;
+            display: flex; align-items: center; justify-content: center;
+            transition: 0.2s; color: #ccc;
+        }
+        .wishlist-btn.active { color: #e74c3c; }
+        
+        .shop-link {
+            display: block; text-align: center; padding: 10px; background: var(--text-main); color: var(--btn-text);
+        }
+
+        /* --- SECTIONS (ABOUT, CONTACT, QUIZ) --- */
+        .content-section { padding: 80px 0; max-width: 800px; margin: 0 auto; text-align: center; }
+        .about-text { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 30px; }
+        
+        /* Style Quiz */
+        .quiz-options { display: flex; justify-content: center; gap: 20px; margin-top: 30px; flex-wrap: wrap; }
+        .quiz-card { width: 200px; height: 150px; background: var(--card-bg); border: 1px solid var(--accent); cursor: pointer; display: flex; align-items: center; justify-content: center; border-radius: 8px; transition: 0.3s; }
+        .quiz-card:hover { background: var(--accent); color: var(--bg-color); }
+
+        /* Contact Form */
+        .contact-form { display: flex; flex-direction: column; gap: 15px; max-width: 500px; margin: 0 auto; }
+        input, textarea { padding: 15px; border: 1px solid #ccc; background: transparent; border-radius: 4px; font-family: var(--font-body); color: var(--text-main); }
+        
+        /* --- FOOTER --- */
+        footer { background: #2d2d2d; color: #fff; padding: 60px 0 20px; margin-top: 60px; text-align: center; }
+        [data-theme="dark"] footer { background: #111; }
+        
+        .footer-links { margin: 20px 0; }
+        .footer-links a { margin: 0 10px; color: #aaa; font-size: 0.9rem; }
+        .disclaimer { font-size: 0.8rem; color: #888; margin-top: 20px; border-top: 1px solid #444; padding-top: 20px; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .socials { font-size: 1.5rem; margin-bottom: 20px; }
+        .socials span { margin: 0 10px; cursor: pointer; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; } /* Simple mobile menu hide for now */
+            .hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">THE CURATED ROOM</div>
+                <div class="nav-links">
+                    <a href="#shop">Shop</a>
+                    <a href="#about">About</a>
+                    <a href="#quiz">Style Quiz</a>
+                    <a href="#contact">Contact</a>
+                    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Minimalist spaces, curated for you.</h1>
+            <p>Handpicked home decor inspirations from Pinterest. Click any item to shop the exact look on Amazon.</p>
+            <a href="#shop" class="btn">Start Browsing</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container" id="shop">
+        
+        <!-- Filters -->
+        <div class="filters">
+            <div class="filter-group">
+                <span class="filter-label">ROOM:</span>
+                <button class="filter-btn active" onclick="filterProducts('all', 'room')">All</button>
+                <button class="filter-btn" onclick="filterProducts('living', 'room')">Living Room</button>
+                <button class="filter-btn" onclick="filterProducts('bedroom', 'room')">Bedroom</button>
+            </div>
+            <div class="filter-group">
+                <span class="filter-label">STYLE:</span>
+                <button class="filter-btn active" onclick="filterProducts('all', 'style')">All</button>
+                <button class="filter-btn" onclick="filterProducts('japandi', 'style')">Japandi
