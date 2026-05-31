@@ -21,15 +21,15 @@
             margin-bottom: 30px;
             max-width: 400px;
         }
-        /* Profile Image Styling */
+        /* Profile Image Layout */
         .profile-img {
-            width: 90px;
-            height: 90px;
+            width: 95px;
+            height: 95px;
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 15px;
             border: 2px solid #c97a55;
-            box-shadow: 0 4px 10px rgba(186, 169, 151, 0.2);
+            box-shadow: 0 4px 12px rgba(186, 169, 151, 0.25);
         }
         header h1 {
             font-size: 32px;
@@ -45,14 +45,14 @@
             margin: 0;
         }
         .divider {
-            width: 50px;
+            width: 60px;
             height: 2px;
             background-color: #c97a55;
             margin: 15px auto;
         }
         main {
             width: 100%;
-            max-width: 420px;
+            max-width: 440px;
         }
         h3 {
             text-align: center;
@@ -60,8 +60,8 @@
             text-transform: uppercase;
             letter-spacing: 3px;
             color: #9e8e7f;
-            margin-top: 30px;
-            margin-bottom: 12px;
+            margin-top: 35px;
+            margin-bottom: 15px;
         }
         .btn {
             display: flex;
@@ -76,17 +76,18 @@
             font-weight: 600;
             font-size: 15px;
             box-shadow: 0 8px 20px rgba(186, 169, 151, 0.15);
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
             border: 1px solid rgba(224, 212, 198, 0.4);
             cursor: pointer;
         }
-        /* Safe Interaction Styles for Mobile & Desktop */
+        /* Tap & Hover Micro-Animations */
         .btn:hover, .btn:active {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 24px rgba(186, 169, 151, 0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(186, 169, 151, 0.3);
             border-color: #c97a55;
             color: #c97a55;
         }
+        /* Top Highlighting Button styling */
         .btn-featured {
             background: #c97a55;
             color: #ffffff;
@@ -97,7 +98,7 @@
             color: #ffffff;
         }
         .emoji {
-            margin-right: 10px;
+            margin-right: 12px;
             font-size: 18px;
         }
     </style>
@@ -105,7 +106,7 @@
 <body>
 
     <header>
-        <!-- PROFILE IMAGE: Paste your image link inside src="..." below later -->
+        <!-- PROFILE IMAGE PLACEHOLDER -->
         <img src="https://placeholder.com" alt="Palak Panchal" class="profile-img">
         <h1>Palak Panchal</h1>
         <p>Home Decor Curation</p>
@@ -116,25 +117,29 @@
         
         <h3>🔥 Top Amazon Choices</h3>
         
-        <!-- REPLACE the '#' with your actual Amazon affiliate links inside the href attribute -->
+        <!-- बटन 1: बजट डेकोरेशन फ़ाइंड्स -->
         <a href="#" class="btn btn-featured" target="_blank" rel="noopener">
             <span class="emoji">🛍️</span> Shop Viral Decor Finds Under ₹500
         </a>
         
+        <!-- बटन 2: लाइटिंग और रूम एक्सेंट्स -->
         <a href="#" class="btn" target="_blank" rel="noopener">
             <span class="emoji">✨</span> View Aesthetic Room Accents & Lights
         </a>
 
         <h3>🛋️ Curated Spaces</h3>
         
+        <!-- बटन 3: बोहो लिविंग रूम स्टाइल्स -->
         <a href="#" class="btn" target="_blank" rel="noopener">
             <span class="emoji">🌿</span> Explore Minimalist Boho Room Styling
         </a>
         
+        <!-- बटन 4: स्पेस सेविंग शेल्व्स -->
         <a href="#" class="btn" target="_blank" rel="noopener">
             <span class="emoji">🗄️</span> Get Space Saving Floating Shelves
         </a>
         
+        <!-- बटन 5: स्टेटमेंट मिरर और आर्ट -->
         <a href="#" class="btn" target="_blank" rel="noopener">
             <span class="emoji">🪞</span> Browse Statement Mirrors & Wall Art
         </a>
