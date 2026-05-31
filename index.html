@@ -3,106 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Palak Panchal | Home Decor Explorer</title>
+    <title>Palak Panchal | Home Decor Curation</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fcf9f5;
-            color: #4a3f35;
+            font-family: 'Playfair Display', 'Georgia', serif;
+            background: linear-gradient(135deg, #fbf8f3 0%, #f4eee1 100%);
+            color: #2b221a;
             margin: 0;
-            padding: 20px;
+            padding: 30px 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
+            min-height: 100vh;
         }
         header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             max-width: 400px;
         }
         header h1 {
-            font-size: 24px;
-            color: #2c221e;
-            margin: 10px 0 5px 0;
+            font-size: 32px;
+            font-weight: 700;
+            color: #c97a55; /* Warm Terracotta */
+            margin: 0 0 10px 0;
+            letter-spacing: -0.5px;
         }
         header p {
+            font-family: 'Segoe UI', sans-serif;
             font-size: 14px;
-            color: #7a6e67;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #7c6e62;
             margin: 0;
+        }
+        .divider {
+            width: 50px;
+            height: 2px;
+            background-color: #c97a55;
+            margin: 20px auto;
         }
         main {
             width: 100%;
-            max-width: 450px;
+            max-width: 420px;
         }
         h3 {
+            font-family: 'Segoe UI', sans-serif;
             text-align: center;
-            font-size: 16px;
+            font-size: 13px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #6e5d53;
-            margin-top: 25px;
-            margin-bottom: 10px;
-            border-bottom: 1px solid #e8dec9;
-            padding-bottom: 5px;
+            letter-spacing: 3px;
+            color: #9e8e7f;
+            margin-top: 35px;
+            margin-bottom: 15px;
         }
         .btn {
-            display: block;
-            text-align: center;
-            padding: 16px;
-            margin: 12px 0;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 20px;
+            margin: 14px 0;
             background: #ffffff;
-            color: #4a3f35;
+            color: #362c23;
             text-decoration: none;
-            border-radius: 12px;
+            border-radius: 50px; /* Smooth Pill Shape */
             font-weight: 600;
-            box-shadow: 0 4px 6px rgba(165, 144, 124, 0.1);
-            transition: all 0.3s ease;
-            border: 1px solid #ebd9c8;
+            font-size: 15px;
+            box-shadow: 0 8px 20px rgba(186, 169, 151, 0.15);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            border: 1px solid rgba(224, 212, 198, 0.4);
         }
+        /* Interactive Hover Effect */
         .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(165, 144, 124, 0.15);
-            background: #fdfaf7;
-            border-color: #bfa38a;
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 12px 28px rgba(186, 169, 151, 0.3);
+            background: #ffffff;
+            border-color: #c97a55;
+            color: #c97a55;
         }
+        /* Standout/Featured Button */
         .btn-featured {
-            background: #bfa38a;
+            background: #c97a55;
             color: #ffffff;
             border: none;
         }
         .btn-featured:hover {
-            background: #a88d75;
+            background: #b56743;
             color: #ffffff;
+        }
+        .emoji {
+            margin-right: 10px;
+            font-size: 18px;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <!-- Paste your profile image link inside src if you have one -->
         <h1>Palak Panchal</h1>
-        <p>✨ Curating the best aesthetic & budget-friendly home decor finds.</p>
+        <p>Home Decor Curation</p>
+        <div class="divider"></div>
     </header>
 
     <main>
         
-        <h3>🔥 Viral Budget Finds</h3>
+        <h3>🔥 Top Amazon Choices</h3>
         <a href="YOUR_AMAZON_LINK_HERE" class="btn btn-featured">
-            🛍️ Top 10 Amazon Decor Items (Under ₹500)
+            <span class="emoji">🛍️</span> Viral Decor Finds Under ₹500
         </a>
         <a href="YOUR_AMAZON_LINK_HERE" class="btn">
-            ✨ Aesthetic Room Accents & Fairy Lights
+            <span class="emoji">✨</span> Aesthetic Room Accents & Lights
         </a>
 
-        <h3>🛋️ Room Styles & Furniture</h3>
+        <h3>🛋️ Curated Spaces</h3>
         <a href="YOUR_AMAZON_LINK_HERE" class="btn">
-            🌿 Minimalist Boho Living Room Finds
+            <span class="emoji">🌿</span> Minimalist Boho Living Room
         </a>
         <a href="YOUR_AMAZON_LINK_HERE" class="btn">
-            🗄️ Small Space Organization & Floating Shelves
+            <span class="emoji">🗄️</span> Space Saving Floating Shelves
         </a>
         <a href="YOUR_AMAZON_LINK_HERE" class="btn">
-            🪞 Trendy Mirrors & Wall Art Aesthetics
+            <span class="emoji">🪞</span> Statement Mirrors & Wall Art
         </a>
 
     </main>
